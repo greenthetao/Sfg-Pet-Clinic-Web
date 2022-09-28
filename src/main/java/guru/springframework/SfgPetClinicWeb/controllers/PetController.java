@@ -1,11 +1,11 @@
 package guru.springframework.SfgPetClinicWeb.controllers;
 
-import guru.springframework.sfgpetclinic.model.Owner;
-import guru.springframework.sfgpetclinic.model.Pet;
-import guru.springframework.sfgpetclinic.model.PetType;
-import guru.springframework.sfgpetclinic.services.OwnerService;
-import guru.springframework.sfgpetclinic.services.PetService;
-import guru.springframework.sfgpetclinic.services.PetTypeService;
+import guru.springframework.SfgPetClinicData.model.Owner;
+import guru.springframework.SfgPetClinicData.model.Pet;
+import guru.springframework.SfgPetClinicData.model.PetType;
+import guru.springframework.SfgPetClinicData.services.OwnerService;
+import guru.springframework.SfgPetClinicData.services.PetService;
+import guru.springframework.SfgPetClinicData.services.PetTypeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;

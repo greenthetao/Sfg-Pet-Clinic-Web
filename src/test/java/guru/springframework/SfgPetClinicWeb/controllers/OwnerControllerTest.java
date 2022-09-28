@@ -1,7 +1,7 @@
 package guru.springframework.SfgPetClinicWeb.controllers;
 
-import guru.springframework.sfgpetclinic.model.Owner;
-import guru.springframework.sfgpetclinic.services.OwnerService;
+import guru.springframework.SfgPetClinicData.model.Owner;
+import guru.springframework.SfgPetClinicData.services.OwnerService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -53,7 +53,8 @@ class OwnerControllerTest {
                 .andExpect(view().name("owners/findOwners"))
                 .andExpect(model().attributeExists("owner"));
 
-        verifyZeroInteractions(ownerService);
+//      verifyZeroInteractions(ownerService);
+        verifyNoInteractions(ownerService);
     }
 
     @Test
@@ -108,7 +109,8 @@ class OwnerControllerTest {
                 .andExpect(view().name("owners/createOrUpdateOwnerForm"))
                 .andExpect(model().attributeExists("owner"));
 
-        verifyZeroInteractions(ownerService);
+//      verifyZeroInteractions(ownerService);
+        verifyNoInteractions(ownerService);
     }
 
     @Test
@@ -132,7 +134,8 @@ class OwnerControllerTest {
                 .andExpect(view().name("owners/createOrUpdateOwnerForm"))
                 .andExpect(model().attributeExists("owner"));
 
-        verifyZeroInteractions(ownerService);
+//      verifyZeroInteractions(ownerService);
+        verifyNoInteractions(ownerService);
     }
 
     @Test

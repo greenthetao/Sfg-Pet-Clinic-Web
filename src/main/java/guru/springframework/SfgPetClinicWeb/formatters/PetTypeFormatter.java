@@ -1,7 +1,7 @@
 package guru.springframework.SfgPetClinicWeb.formatters;
 
-import guru.springframework.sfgpetclinic.model.PetType;
-import guru.springframework.sfgpetclinic.services.PetTypeService;
+import guru.springframework.SfgPetClinicData.model.PetType;
+import guru.springframework.SfgPetClinicData.services.PetTypeService;
 import org.springframework.format.Formatter;
 import org.springframework.stereotype.Component;
 

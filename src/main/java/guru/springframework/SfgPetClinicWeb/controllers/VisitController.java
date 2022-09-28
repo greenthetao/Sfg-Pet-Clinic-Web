@@ -1,9 +1,9 @@
 package guru.springframework.SfgPetClinicWeb.controllers;
 
-import guru.springframework.sfgpetclinic.model.Pet;
-import guru.springframework.sfgpetclinic.model.Visit;
-import guru.springframework.sfgpetclinic.services.PetService;
-import guru.springframework.sfgpetclinic.services.VisitService;
+import guru.springframework.SfgPetClinicData.model.Pet;
+import guru.springframework.SfgPetClinicData.model.Visit;
+import guru.springframework.SfgPetClinicData.services.PetService;
+import guru.springframework.SfgPetClinicData.services.VisitService;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;

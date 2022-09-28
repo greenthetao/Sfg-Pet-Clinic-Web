@@ -1,7 +1,7 @@
 package guru.springframework.SfgPetClinicWeb.controllers;
 
-import src.main.java.guru.springframework.sfgpetclinic.model.*;
-import src.main.java.guru.springframework.sfgpetclinic.services.OwnerService;
+import guru.springframework.SfgPetClinicData.model.*;
+import guru.springframework.SfgPetClinicData.services.OwnerService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
