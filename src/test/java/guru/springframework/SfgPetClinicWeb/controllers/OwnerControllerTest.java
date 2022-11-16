@@ -2,6 +2,8 @@ package guru.springframework.SfgPetClinicWeb.controllers;
 
 import guru.springframework.SfgPetClinicData.model.Owner;
 import guru.springframework.SfgPetClinicData.services.OwnerService;
+import guru.springframework.SfgPetClinicData.services.map.OwnerMapService;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -27,6 +29,9 @@ class OwnerControllerTest {
 
     @Mock
     OwnerService ownerService;
+    
+    @Mock
+    OwnerMapService ownerMapService;
 
     @InjectMocks
     OwnerController controller;
@@ -59,7 +64,7 @@ class OwnerControllerTest {
 
     @Test
     void processFindFormReturnMany() throws Exception {
-        when(ownerService.findAllByLastNameLike(anyString()))
+        when(ownerMapService.findAllByLastNameLike(anyString()))
                 .thenReturn(Arrays.asList(Owner.builder().id(1l).build(),
                         Owner.builder().id(2l).build()));
 
@@ -71,7 +76,7 @@ class OwnerControllerTest {
 
     @Test
     void processFindFormReturnOne() throws Exception {
-        when(ownerService.findAllByLastNameLike(anyString())).thenReturn(Arrays.asList(Owner.builder().id(1l).build()));
+        when(ownerMapService.findAllByLastNameLike(anyString())).thenReturn(Arrays.asList(Owner.builder().id(1l).build()));
 
         mockMvc.perform(get("/owners"))
                 .andExpect(status().is3xxRedirection())
@@ -80,7 +85,7 @@ class OwnerControllerTest {
 
     @Test
     void processFindFormEmptyReturnMany() throws Exception {
-        when(ownerService.findAllByLastNameLike(anyString()))
+        when(ownerMapService.findAllByLastNameLike(anyString()))
                 .thenReturn(Arrays.asList(Owner.builder().id(1l).build(),
                         Owner.builder().id(2l).build()));
 

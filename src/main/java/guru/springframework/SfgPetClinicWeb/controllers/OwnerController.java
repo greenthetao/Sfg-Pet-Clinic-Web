@@ -2,6 +2,7 @@ package guru.springframework.SfgPetClinicWeb.controllers;
 
 import guru.springframework.SfgPetClinicData.model.*;
 import guru.springframework.SfgPetClinicData.services.OwnerService;
+import guru.springframework.SfgPetClinicData.services.map.OwnerMapService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -21,9 +22,11 @@ public class OwnerController {
     private static final String VIEWS_OWNER_CREATE_OR_UPDATE_FORM = "owners/createOrUpdateOwnerForm";
 
     private final OwnerService ownerService;
+    private final OwnerMapService ownerMapService;
 
-    public OwnerController(OwnerService ownerService) {
+    public OwnerController(OwnerService ownerService, OwnerMapService ownerMapService) {
         this.ownerService = ownerService;
+        this.ownerMapService = ownerMapService;
     }
 
     @InitBinder
@@ -46,7 +49,7 @@ public class OwnerController {
         }
 
         // find owners by last name
-        List<Owner> results = ownerService.findAllByLastNameLike("%"+ owner.getLastName() + "%");
+        List<Owner> results = ownerMapService.findAllByLastNameLike("%"+ owner.getLastName() + "%");
 
         if (results.isEmpty()) {
             // no owners found
